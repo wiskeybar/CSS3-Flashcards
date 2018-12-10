@@ -1,0 +1,219 @@
+/* variables, use them if you want to easily change colors or fonts */
+:root {
+    --text-font: 'Lato', sans-serif;
+    --head-font: 'Roboto', sans-serif;
+    --olivedark: rgb(28, 36, 15);
+    --olivebright: rgb(60, 83, 22);
+    --oliveglow: rgb(106, 148, 38);
+    --bright: rgb(202, 200, 206);
+    --cardcolor: rgb(211, 211, 211);
+    --grayback: rgb(83, 83, 83);
+    --blueglow: rgb(37, 145, 120);
+    font-size: calc(0.5em + 0.5vw);
+    line-height: calc((0.5em + 0.5vw)*1.8)
+}
+
+/* basic styling */
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.head {
+    width: 70%;
+    margin: 0 auto;
+    color: var(--bright);
+    text-align: center;
+    background-color: var(--olivebright);
+    margin-bottom: 30px;
+    box-shadow: inset 0 0 1px 1px rgb(0, 0, 0);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--head-font)
+}
+
+p {
+    font-family: var(--text-font);
+}
+
+/* main containers styling starts here */
+
+.main {
+    height: 80vh;
+    width: 90vw;
+    background-color: var(--olivedark);
+    margin: 0 auto;
+    position: relative;
+    box-shadow: inset 0 0 30px 10px black, 0 0 50px 10px black;
+}
+
+.instruction-container {
+    width: 70vw;
+    min-height: 12vh;
+    background-color: var(--grayback);
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    text-align: center;
+    box-shadow: inset 0 0 10px var(--olivedark);
+    padding: 0 10px;
+    color: var(--brightfont);
+    border-radius: 1%;
+}
+
+.flashcard-container {
+
+    background-color: var(--bright);
+    position: absolute;
+    left: 22.5%;
+    right: 22.5%;
+    top: calc(5% + 16vh);
+    bottom: 15%;
+    border-radius: 2%;
+    box-shadow: 0 0 20px 1px var(--blueglow);
+}
+
+/* card/question container styling starts here */
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 4%;
+    transform: translate(-50%, -50%);
+    /* set transition times as convenient */
+    transition: opacity 0.5s linear, transform 0.8s ease-out;
+    width: 80%;
+    height: 80%;
+    box-shadow: 0 0 10px var(--blueglow);
+    background-color: var(--cardcolor);
+    padding: 10px;
+}
+
+.hidden {
+    transform: translate(-50%, -50%) rotateY(180deg);
+    z-index: -1;
+    opacity: 0;
+}
+
+.flashcard-question-front {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+
+/* flashcard button styling starts here */
+.button {
+    min-width: 10%;
+    min-height: 10%;
+    border-radius: 4%;
+    background-color: var(--olivebright)
+}
+
+.button:hover {
+    background-color: var(--oliveglow)
+}
+
+.flashcard-back {
+    position: absolute;
+    left: 10%;
+    bottom: 3%;
+    box-shadow: 0 0 10px var(--blueglow);
+}
+
+.flashcard-next {
+    position: absolute;
+    right: 10%;
+    bottom: 3%;
+    box-shadow: 0 0 10px var(--blueglow);
+}
+
+.flashcard-reset {
+    position: absolute;
+    right: 50%;
+    bottom: 2%;
+    transform: translate(50%);
+    box-shadow: 0 0 10px var(--blueglow);
+    display: none;
+}
+
+.flashcard-reset.show {
+    display: block;
+}
+
+
+.text {
+    text-align: center;
+}
+
+/* 'add your question' section starts here */
+.private {
+    margin: 10px;
+
+}
+
+.inputholder {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 13vh;
+}
+
+.input-own {
+    display: block;
+    align-self: center;
+    margin: 10px;
+
+}
+
+.input-info {
+    font-size: small;
+    color: var(--bright);
+    flex-basis: 25%;
+}
+
+/* media queries are set only for portrait view and for larger screen, add more if more support needed. */
+@media (orientation: portrait) {
+    .main {
+        height: 90vh;
+        width: 90vw;
+    }
+
+    .card {
+        width: 90%;
+        height: 90%;
+    }
+
+    .flashcard-container {
+        left: 12.5%;
+        right: 12.5%;
+    }
+
+    .head {
+        margin-bottom: 0
+    }
+
+    .inputholder {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 1400px) and (min-height:640px) {
+    :root {
+        font-size: calc(0.7em + 0.6vw);
+        line-height: calc((0.7em + 0.6vw)*1.5)
+    }
+}
+
+@media (max-width: 640px) and (max-height:375px) {
+    :root {
+        font-size: calc(0.4em + 0.4vw);
+        line-height: calc((0.4em + 0.4vw)*1.5)
+    }
+}
