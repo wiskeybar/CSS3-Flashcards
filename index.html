@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS flashcards
+
+    </title>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:400,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <link rel="stylesheet" href="flash.css">
+</head>
+
+<body>
+    <header class='head title'>CSS3 FLASHCARDS</header>
+
+    <main class='main'>
+        <div class='instruction-container'>
+            <p>Click on the flashcard to start. Click on it again when you want to see the
+                answer for the question. If you'd like to go back to the previous question press 'back', if you'd like
+                to skip a question click on 'next'.</p>
+        </div>
+        <div class='flashcard-container'>
+            <div class='card front'>
+                <h3 class='text flashcard-question-head flashcard-question-front'>CSS3 Flashcards</h3>
+            </div>
+            <div class='card back hidden'>
+                <h3 class='text flashcard-answer-head'> CSS3 Flashcards</h3>
+                <p class='text flashcard-answer'> Click on the 'start' button to... well, to start.</p>
+            </div>
+        </div>
+        <div class="button-container"><button class="button flashcard-back">Back</button></div>
+        <div class="button-container"><button class="button flashcard-reset">Reset</button></div>
+        <div class="button-container"><button class="button flashcard-next">Start</button></div>
+
+    </main>
+    <!-- remove the section below if your not interested in the 'add your own question function' -->
+    <section class="inputholder">
+        <textarea class="private own-question" name="your question" cols="50" rows="7" placeholder="you can add your own question here"></textarea>
+        <textarea class="private own-answer" name="your question" cols="50" rows="7" placeholder="the answer to your question goes here"></textarea>
+        <button class="button input-own">Add my question</button>
+        <div class="input-info">
+            <p>This is a simple "question adder", you can dynamically add your own questions and answers here. The
+                questions are ineserted into the 'questions' object up untill you refresh the page. Press F12 and
+                type in
+                'questions' in the console to see the full list. You can see the whole project on my Github, it's
+                simple.</p>
+        </div>
+    </section>
+
+
+
+    <script src="flash.js"></script>
+</body>
+
+</html>
